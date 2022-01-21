@@ -7,6 +7,8 @@ const ccprofile = require('./ccprofile')
 const cfprofile = require('./cfprofile')
 const {people} = require('./people')
 
+const PORT = process.env.PORT || 5000
+
 app.use(express.json());
 app.use(cors());
 
@@ -18,6 +20,6 @@ app.get('/info' , (req,res) => {
 app.get('/info/codechef/:id' , ccprofile)
 app.get('/info/codeforces/:id' , cfprofile)
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log("Server is running on port 5000")
 })
